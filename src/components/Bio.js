@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 
 // Import typefaces
 import 'typeface-montserrat'
@@ -7,25 +8,22 @@ import 'typeface-merriweather'
 import profilePic from './profile-pic.jpg'
 import { rhythm } from '../utils/typography'
 
+const Wrapper = styled.div`
+  display: flex;
+  margin-bottom: ${rhythm(2.5)};
+`
+const Img = styled.img`
+  margin-right: ${rhythm(1 / 2)};
+  margin-bottom: 0;
+  width: ${rhythm(2)};
+  height: ${rhythm(2)};
+`
+
 class Bio extends React.Component {
   render() {
     return (
-      <div
-        style={{
-          display: 'flex',
-          marginBottom: rhythm(2.5),
-        }}
-      >
-        <img
-          src={profilePic}
-          alt={`Kyle Mathews`}
-          style={{
-            marginRight: rhythm(1 / 2),
-            marginBottom: 0,
-            width: rhythm(2),
-            height: rhythm(2),
-          }}
-        />
+      <Wrapper>
+        <Img src={profilePic} alt={`Kyle Mathews`} />
         <p>
           Written by <strong>Kyle Mathews</strong> who lives and works in San
           Francisco building useful things.{' '}
@@ -33,7 +31,7 @@ class Bio extends React.Component {
             You should follow him on Twitter
           </a>
         </p>
-      </div>
+      </Wrapper>
     )
   }
 }
